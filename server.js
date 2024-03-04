@@ -31,15 +31,15 @@ app.get('/books', async(req, res) => {
 });
 
 // GET method /books/{id}
-app.get('/books/:id', async(req, res) => {
-    try {
-        const {id} = req.params;
-        const book = await Book.findById(id);
-        res.status(200).json(book);
-    } catch (error) {
-        res.status(500).json({message: `${id} does not exist in DB.`});
-    }
-});
+// app.get('/books/:id', async(req, res) => {
+//     try {
+//         const {id} = req.params;
+//         const book = await Book.findById(id);
+//         res.status(200).json(book);
+//     } catch (error) {
+//         res.status(500).json({message: `${id} does not exist in DB.`});
+//     }
+// });
 
 
 // POST method /books
@@ -87,11 +87,30 @@ app.delete('/books/:id', async(req, res) => {
 
 
 // GET method /books/search?q={query}
-app.get('/books/search', function(req, res) {
-    console.log("Title: ", req.query.title);
-    console.log("Author: ", req.query.author);
-    res.send();
+app.get('/books/search', async(req, res) => {
+    try {
+        const books = await Book.find({});
+        const searchTerm = req.query.q;
+        if (!searchTerm) {
+            res.status(404).json({message: "Search term not found"});
+        }
+        else {
+            // Find book based on title or author using filter 
+            const searchResults = books.filter(book =>
+                book.title.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "")) ||
+                book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
+            );   
+            console.log("Search results: ", searchResults);
+            res.status(200).json(searchResults);
+        }
+        
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+
 });
+    
+
 // GET /books/stats 
 
 
