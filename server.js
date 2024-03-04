@@ -87,6 +87,11 @@ app.delete('/books/:id', async(req, res) => {
 
 
 // GET method /books/search?q={query}
+app.get('/books/search', function(req, res) {
+    console.log("Title: ", req.query.title);
+    console.log("Author: ", req.query.author);
+    res.send();
+});
 // GET /books/stats 
 
 
