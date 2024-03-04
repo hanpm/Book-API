@@ -26,20 +26,24 @@ app.get('/books', async(req, res) => {
         const books = await Book.find({});
         res.status(200).json(books);
     } catch (error) {
+        console.log("1")
         res.status(500).json({message: error.message});
     }
 });
 
-// GET method /books/{id}
-// app.get('/books/:id', async(req, res) => {
-//     try {
-//         const {id} = req.params;
-//         const book = await Book.findById(id);
-//         res.status(200).json(book);
-//     } catch (error) {
-//         res.status(500).json({message: `${id} does not exist in DB.`});
-//     }
-// });
+// GET method /books/{id} ([0-9a-f]{24})
+app.get('/books/:id([0-9a-f]{24})', async(req, res) => {
+    try {
+        const {id} = req.params;
+        console.log(req.params)
+        const book = await Book.findById(id);
+        res.status(200).json(book);
+    } catch (error) {
+        console.log("error to get by id")
+        res.status(500).json({message: `${id} does not exist in DB.`});
+    }
+});
+
 
 
 // POST method /books
@@ -65,11 +69,12 @@ app.put('/books/:id', async(req, res) => {
             res.status(200).json(updatedBook);
         }
     } catch (error) {
+        console.log("hi")
         res.status(500).json({message: error.message});
     }
 });
 
-// DELETE method /books/{id}
+// DELETE method /books/{id} 
 app.delete('/books/:id', async(req, res) => {
     try {
         const {id} = req.params;
@@ -86,7 +91,7 @@ app.delete('/books/:id', async(req, res) => {
 });
 
 
-// GET method /books/search?q={query}
+//GET method /books/search?q={query}
 app.get('/books/search', async(req, res) => {
     try {
         const books = await Book.find({});
@@ -97,6 +102,7 @@ app.get('/books/search', async(req, res) => {
         else {
             // Find book based on title or author using filter 
             const searchResults = books.filter(book =>
+                book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
                 book.title.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "")) ||
                 book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
             );   
@@ -105,13 +111,14 @@ app.get('/books/search', async(req, res) => {
         }
         
     } catch (error) {
+        console.log("search error")
         res.status(500).json({message: error.message});
     }
 
 });
     
+// GET /books/stats
 
-// GET /books/stats 
 
 
 
