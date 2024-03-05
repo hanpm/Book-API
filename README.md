@@ -15,8 +15,8 @@ There are couple things that I came in mind when completing (& researching) for 
 
 1) Implementing more features to the API
 I frequent the library a lot and here's some useful features to include:
-- Adding genres and sorting by genres. 
-- Having a count of each inventory. 
+    - Adding genres and sorting by genres. 
+    - Having a count of each inventory. 
 
 2) Implementing [MVC architecture](https://medium.com/@ansari028amaan/understanding-mvc-architecture-in-the-mern-stack-5cc083828298#:~:text=The%20MVC%20architecture%20provides%20a,a%20more%20efficient%20development%20process.)
 - Adhering to a structured architecture is important for creating scalable, reusable, and organized applications. With more time, I would better organize my code in this format.
