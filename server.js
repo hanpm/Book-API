@@ -26,7 +26,6 @@ app.get('/books', async(req, res) => {
         const books = await Book.find({});
         res.status(200).json(books);
     } catch (error) {
-        console.log("1")
         res.status(500).json({message: error.message});
     }
 });
@@ -39,7 +38,6 @@ app.get('/books/:id([0-9a-f]{24})', async(req, res) => {
         const book = await Book.findById(id);
         res.status(200).json(book);
     } catch (error) {
-        console.log("error to get by id")
         res.status(500).json({message: `${id} does not exist in DB.`});
     }
 });
@@ -69,7 +67,6 @@ app.put('/books/:id', async(req, res) => {
             res.status(200).json(updatedBook);
         }
     } catch (error) {
-        console.log("hi")
         res.status(500).json({message: error.message});
     }
 });
@@ -118,8 +115,42 @@ app.get('/books/search', async(req, res) => {
 
 });
     
-// GET /books/stats
+// GET /books/stats 
+// Getting the total number of books, earliest/latest publication, list of books in ABC order, list of books by dates, date when the book was inputted into DB.  
 app.get('/books/stats', async(req, res) => {
+    try {
+        const titleAsc = {title: 1};
+        const yearAsc = {publicationYear: 1};
+        const timestampAsc = {createdAt: 1}
+        
+        const bookCount = await Book.countDocuments({});
+        const sortedJsonByABC = await Book.find({}).sort(titleAsc);
+        const sortedJsonByDates = await Book.find({}).sort(yearAsc);
+        const sortedJsonByTimestamp = await Book.find({}).sort(timestampAsc);
+        
+        const lengthOfLibrary = bookCount;
+
+        const bookListABCOrder = []; 
+        const booksListDateOrder = []; 
+        const booksListTimestamp = [];
+
+        for (let i = 0; i < lengthOfLibrary; i++){
+            let itemA = sortedJsonByABC[i].title;
+            let itemB = sortedJsonByDates[i].title;
+            let bookTitle = sortedJsonByTimestamp[i].title;
+            let timestamp = sortedJsonByTimestamp[i].createdAt;
+
+            bookListABCOrder.push(itemA);
+            booksListDateOrder.push(itemB);
+            booksListTimestamp.push({bookTitle, timestamp});
+        };
+
+        res.status(200).json({"Total Number of Books": bookCount, "Earliest publication": sortedJsonByABC[0], "Latest Publication": sortedJsonByABC[lengthOfLibrary-1], "Sorted books by ABC order": bookListABCOrder, "Sorted books by date in asc. order": booksListDateOrder, "Timestamp for when each book entered the library": booksListTimestamp});
+        
+    } catch (error) {
+        console.log("Stats error");
+        res.status(500).json({message: error.message});
+    }
     
 });
 
