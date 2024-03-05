@@ -1,0 +1,570 @@
+[{
+  "_id": {
+    "$oid": "65e504323be2ff278a96c3a7"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "publicationYear": 1960,
+  "createdAt": {
+    "$date": "2024-03-03T23:13:54.625Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:13:54.625Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505313be2ff278a96c3a9"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "publicationYear": 1949,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:09.264Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:09.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505313be2ff278a96c3aa"
+  },
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "publicationYear": 1813,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:09.264Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:09.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3ad"
+  },
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "publicationYear": 1951,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b1"
+  },
+  "title": "Crime and Punishment",
+  "author": "Fyodor Dostoevsky",
+  "publicationYear": 1866,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b3"
+  },
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "publicationYear": 1937,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b4"
+  },
+  "title": "One Hundred Years of Solitude",
+  "author": "Gabriel García Márquez",
+  "publicationYear": 1967,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b6"
+  },
+  "title": "Anna Karenina",
+  "author": "Leo Tolstoy",
+  "publicationYear": 1877,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b5"
+  },
+  "title": "The Adventures of Huckleberry Finn",
+  "author": "Mark Twain",
+  "publicationYear": 1884,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b8"
+  },
+  "title": "The Count of Monte Cristo",
+  "author": "Alexandre Dumas",
+  "publicationYear": 1844,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b7"
+  },
+  "title": "The Picture of Dorian Gray",
+  "author": "Oscar Wilde",
+  "publicationYear": 1890,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b9"
+  },
+  "title": "The Brothers Karamazov",
+  "author": "Fyodor Dostoevsky",
+  "publicationYear": 1880,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3ba"
+  },
+  "title": "The Grapes of Wrath",
+  "author": "John Steinbeck",
+  "publicationYear": 1939,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3b0"
+  },
+  "title": "Brave New World",
+  "author": "Aldous Huxley",
+  "publicationYear": 1932,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3af"
+  },
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "publicationYear": 1954,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e505573be2ff278a96c3bb"
+  },
+  "title": "The Road",
+  "author": "Cormac McCarthy",
+  "publicationYear": 2006,
+  "createdAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-03T23:18:47.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c0"
+  },
+  "title": "The Bell Jar",
+  "author": "Sylvia Plath",
+  "publicationYear": 1963,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.658Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.658Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c3"
+  },
+  "title": "Slaughterhouse-Five",
+  "author": "Kurt Vonnegut",
+  "publicationYear": 1969,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c4"
+  },
+  "title": "The Handmaid's Tale",
+  "author": "Margaret Atwood",
+  "publicationYear": 1985,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c5"
+  },
+  "title": "Middlemarch",
+  "author": "George Eliot",
+  "publicationYear": 1871,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c6"
+  },
+  "title": "The Stranger",
+  "author": "Albert Camus",
+  "publicationYear": 1942,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c1"
+  },
+  "title": "Beloved",
+  "author": "Toni Morrison",
+  "publicationYear": 1987,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c2"
+  },
+  "title": "To the Lighthouse",
+  "author": "Virginia Woolf",
+  "publicationYear": 1927,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17ca"
+  },
+  "title": "The Sun Also Rises",
+  "author": "Ernest Hemingway",
+  "publicationYear": 1926,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c9"
+  },
+  "title": "Heart of Darkness",
+  "author": "Joseph Conrad",
+  "publicationYear": 1899,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17cb"
+  },
+  "title": "Catch-22",
+  "author": "Joseph Heller",
+  "publicationYear": 1961,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17cc"
+  },
+  "title": "A Clockwork Orange",
+  "author": "Anthony Burgess",
+  "publicationYear": 1962,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17cd"
+  },
+  "title": "Gone with the Wind",
+  "author": "Margaret Mitchell",
+  "publicationYear": 1936,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17ce"
+  },
+  "title": "The Sound and the Fury",
+  "author": "William Faulkner",
+  "publicationYear": 1929,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17cf"
+  },
+  "title": "A Tale of Two Cities",
+  "author": "Charles Dickens",
+  "publicationYear": 1859,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17d0"
+  },
+  "title": "On the Road",
+  "author": "Jack Kerouac",
+  "publicationYear": 1957,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17d2"
+  },
+  "title": "The Picture of Dorian Gray",
+  "author": "Oscar Wilde",
+  "publicationYear": 1890,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17d1"
+  },
+  "title": "Les Misérables",
+  "author": "Victor Hugo",
+  "publicationYear": 1862,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17d3"
+  },
+  "title": "The Count of Monte Cristo",
+  "author": "Alexandre Dumas",
+  "publicationYear": 1844,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c7"
+  },
+  "title": "Wuthering Heights",
+  "author": "Emily Brontë",
+  "publicationYear": 1847,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e510ddc6ceb4aaf9bb17c8"
+  },
+  "title": "The Scarlet Letter",
+  "author": "Nathaniel Hawthorne",
+  "publicationYear": 1850,
+  "createdAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:07:57.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e5152214b26a97402977ff"
+  },
+  "title": "The Last Man",
+  "author": "Mary Shelley",
+  "publicationYear": 1862,
+  "createdAt": {
+    "$date": "2024-03-04T00:26:10.249Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-04T00:26:10.249Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e65ac044b227942a33272b"
+  },
+  "title": "Frankenstein",
+  "author": "Mary Shelley",
+  "publicationYear": 1818,
+  "createdAt": {
+    "$date": "2024-03-04T23:35:28.088Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-05T20:37:08.547Z"
+  },
+  "__v": 0
+}]
