@@ -74,22 +74,39 @@ const deleteBooks = async(req, res) => {
 
 const searchBooks = async(req,res) => {
     try {
-        const books = await Book.find({});
+        // default page = 1
+        const page = parseInt(req.query.page) || 1;
+        // default limit = 5
+        const limit = parseInt(req.query.limit) || 10;
+
         const searchTerm = req.query.q;
+        const books = await Book.find({});
+        
         if (!searchTerm) {
             res.status(404).json({message: "Search term not found"});
         }
         else {
             // Find book based on title or author using filter
-            const searchResults = books.filter(book =>
-                book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
-                book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
-                book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
-            );   
-        
+            if (page === undefined && limit === undefined) {
+                const searchResults = books.filter(book =>
+                    book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
+                    book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
+                    book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
+                );   
+            
+                res.status(200).json(searchResults);
+            }
+            else {
+                const paginatedData = paginatedJson(books, page, limit);
+                const searchResults = paginatedData.results.filter(book =>
+                    book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
+                    book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
+                    book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
+                );   
+            
             res.status(200).json(searchResults);
         }
-        
+    } 
     } catch (error) {
         console.log("search error")
         res.status(500).json({message: error.message});
