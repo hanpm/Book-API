@@ -14,7 +14,7 @@ Technology used in this project are [Node.js](https://nodejs.org/en/about), [Exp
 There are couple things that I came in mind when completing (& researching) for this project. 
 
 1) Implementing more features to the API
-I frequent the library a lot and here's some useful features to include:
+- *I frequent the library a lot and here's some useful features to include:*
     - Adding genres and sorting by genres. 
     - Having a count of each inventory. 
 
