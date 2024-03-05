@@ -13,8 +13,35 @@ const getBook = async(req, res) => {
 
 const getBooks = async(req, res) => {
     try {
+        const page = parseInt(req.query.page);
+        const limit = parseInt(req.query.limit);
         const books = await Book.find({});
-        res.status(200).json(books);
+
+        if (page === undefined && limit === undefined) {
+            res.status(200).json(books);
+        }
+        else {
+            const startIndex = (page - 1) * limit;
+            const endIndex = (page * limit);
+            const results = {};
+
+            if(endIndex < books.length) {
+                results.next = {
+                    page: page + 1,
+                    limit: limit
+                };     
+            }
+
+            if (startIndex > 0) {
+                results.previous = {
+                    page: page - 1,
+                    limit: limit
+                }; 
+            }
+            results.results = books.slice(startIndex, endIndex);
+            res.status(200).json(results);
+        }
+        
     } catch (error) {
         res.status(500).json({message: error.message});
     }
@@ -50,7 +77,7 @@ const deleteBooks = async(req, res) => {
         const {id} = req.params;
         const book = await Book.findByIdAndDelete(id, req.body);
         if (!book) {
-            return res.status(404).json({message: `Cannot find book for ${id}`});
+            return res.status(500).json({message: `Cannot find book for ${id}`});
         }
         else {
             res.status(200).json({message: `Successfully deleted book for ${id}`});
