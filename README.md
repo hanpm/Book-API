@@ -69,19 +69,19 @@ Before you begin, ensure you have the following installed on your system:
     localhost:3000/books
  
     {
-			"title": "Insert title",
-			"author": "Insert author",
-			"publicationYear": 0
+    "title": "Insert title",
+    "author": "Insert author",
+    "publicationYear": 0
     }
 
 - Update books
     ```bash
     localhost:3000/books/<insert ID>
-    
+
     {
-			"title": "Insert updated title",
-			"author": "Insert updated author",
-			"publicationYear": 0
+    "title": "Insert updated title",
+    "author": "Insert updated author",
+    "publicationYear": 0
     }
 
 - Search books
