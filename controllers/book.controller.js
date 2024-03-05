@@ -1,13 +1,5 @@
 const Book = require("../models/book.model");
 
-const getBooks = async(req, res) => {
-    try {
-        const books = await Book.find({});
-        res.status(200).json(books);
-    } catch (error) {
-        res.status(500).json({message: error.message});
-    }
-};
 
 const getBook = async(req, res) => {
     try {
@@ -16,6 +8,15 @@ const getBook = async(req, res) => {
         res.status(200).json(book);
     } catch (error) {
         res.status(500).json({message: `${id} does not exist in DB.`});
+    }
+};
+
+const getBooks = async(req, res) => {
+    try {
+        const books = await Book.find({});
+        res.status(200).json(books);
+    } catch (error) {
+        res.status(500).json({message: error.message});
     }
 };
 
