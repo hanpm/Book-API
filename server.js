@@ -100,13 +100,14 @@ app.get('/books/search', async(req, res) => {
             res.status(404).json({message: "Search term not found"});
         }
         else {
-            // Find book based on title or author using filter 
+            // Find book based on title or author using filter é
             const searchResults = books.filter(book =>
                 book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
-                book.title.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "")) ||
+                book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
                 book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
             );   
             console.log("Search results: ", searchResults);
+
             res.status(200).json(searchResults);
         }
         
@@ -118,7 +119,9 @@ app.get('/books/search', async(req, res) => {
 });
     
 // GET /books/stats
-
+app.get('/books/stats', async(req, res) => {
+    
+});
 
 
 
