@@ -1,7 +1,7 @@
 # Book-API
 Creating an API with Node.js, Express, and MongoDB to manage a collection of books. 
 
-> [!NOTE] About me! 
+> About me! 
 > Hi! 👋 My name is [Han](https://www.linkedin.com/in/hmp36/). I'm a recent grad from California State University, Long Beach. I know there's areas for me to improve, but nonetheless, this project was a lot of fun! 
 
 ## Project Description 
