@@ -13,35 +13,20 @@ const getBook = async(req, res) => {
 
 const getBooks = async(req, res) => {
     try {
-        const page = parseInt(req.query.page);
-        const limit = parseInt(req.query.limit);
+        // default page = 1
+        const page = parseInt(req.query.page) || 1;
+        // default limit = 5
+        const limit = parseInt(req.query.limit) || 5;
+
         const books = await Book.find({});
 
         if (page === undefined && limit === undefined) {
             res.status(200).json(books);
         }
         else {
-            const startIndex = (page - 1) * limit;
-            const endIndex = (page * limit);
-            const results = {};
-
-            if(endIndex < books.length) {
-                results.next = {
-                    page: page + 1,
-                    limit: limit
-                };     
-            }
-
-            if (startIndex > 0) {
-                results.previous = {
-                    page: page - 1,
-                    limit: limit
-                }; 
-            }
-            results.results = books.slice(startIndex, endIndex);
-            res.status(200).json(results);
+            const paginatedData = paginatedJson(books, page, limit);
+            res.status(200).json(paginatedData);
         }
-        
     } catch (error) {
         res.status(500).json({message: error.message});
     }
@@ -77,7 +62,7 @@ const deleteBooks = async(req, res) => {
         const {id} = req.params;
         const book = await Book.findByIdAndDelete(id, req.body);
         if (!book) {
-            return res.status(500).json({message: `Cannot find book for ${id}`});
+            return res.status(404).json({message: `Cannot find book for ${id}`});
         }
         else {
             res.status(200).json({message: `Successfully deleted book for ${id}`});
@@ -95,7 +80,7 @@ const searchBooks = async(req,res) => {
             res.status(404).json({message: "Search term not found"});
         }
         else {
-            // Find book based on title or author using filter é
+            // Find book based on title or author using filter
             const searchResults = books.filter(book =>
                 book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
                 book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
@@ -147,6 +132,32 @@ const getStats = async(req, res) => {
     }  
 };
 
+// This is a middleware function 
+const paginatedJson = (books, page, limit) => {
+    const startIndex = (page - 1) * limit;
+    const endIndex = (page * limit);
+    const results = {};
+
+        if(endIndex < books.length) {
+            results.next = {
+                page: page + 1,
+                limit: limit
+            };     
+        }
+
+        if (startIndex > 0) {
+            results.previous = {
+                page: page - 1,
+                limit: limit
+            } 
+        }
+        results.results = books.slice(startIndex, endIndex);
+        return results;
+    };
+
+
+
+
 module.exports = {
     getBooks,
     getBook, 
@@ -154,5 +165,5 @@ module.exports = {
     updateBooks, 
     deleteBooks, 
     searchBooks, 
-    getStats
+    getStats, 
 };
