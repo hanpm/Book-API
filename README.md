@@ -25,6 +25,27 @@ There are couple things that I came in mind when completing (& researching) for 
 
 
 ## How to install and run project
+This guide will walk you through the steps to run an API built with Node.js, Express, and MongoDB.
 
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- Node.js: Download and install Node.js from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository of your Node.js API project or download into your computer and save into your Desktop
+
+   ```bash
+   git clone https://github.com/hanpm/Book-API.git
+
+2. Navigate to the project directory.
+    ```bash
+    cd Desktop/Book-API
+
+2. Install dependencies 
+    ```bash
+    npm install 
 
 ## Test and how to run them
