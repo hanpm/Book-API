@@ -1,6 +1,6 @@
 const Book = require("../models/book.model");
 
-
+// GET Method - getting a book according to id 
 const getBook = async(req, res) => {
     try {
         const {id} = req.params;

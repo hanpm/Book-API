@@ -2,7 +2,7 @@
 Creating an API with Node.js, Express, and MongoDB to manage a collection of books. 
 
 ### About me
-> Hello, everyone! Allow me to introduce myself. I'm [Han](https://www.linkedin.com/in/hmp36/), a recent, 1st-gen. CS grad from California State University, Long Beach, who's *hungry* for a chance at Erewhon! While I'm still a novice when it comes to implementing the MERN stack, this project has been a enjoyable experience for me. There is certainly room for improvement, and I hope to talk further about the project and Erewhon's technology soon.  
+> 👋 Hello, everyone! Allow me to introduce myself. I'm [Han](https://www.linkedin.com/in/hmp36/), a recent, 1st-gen. CS grad from California State University, Long Beach, who's *hungry* for a chance at Erewhon! While I'm still a novice when it comes to implementing the MERN stack, this project has been a enjoyable experience for me. There is certainly room for improvement, and I hope to talk further about the project and Erewhon's technology soon.  
 
 ## Project Description 
 ### Technologies Used
