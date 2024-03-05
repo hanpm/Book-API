@@ -19,10 +19,12 @@ There are couple things that I came in mind when completing (& researching) for 
 2) Refactoring with better [MVC architecture](https://medium.com/@ansari028amaan/understanding-mvc-architecture-in-the-mern-stack-5cc083828298#:~:text=The%20MVC%20architecture%20provides%20a,a%20more%20efficient%20development%20process.)
 - Adhering to a structured architecture is important for creating scalable, reusable, and organized applications. I have already began to separate the code into its appropriate folders. With more time, I would better organize my code according to the embedded link.
 
-2) Complete the [MERN stack](https://www.mongodb.com/mern-stack)
+3) Complete the [MERN stack](https://www.mongodb.com/mern-stack)
 - Currently, this project is only a part of the MERN stack. 
-- We need to also implement a frontend, **React**, to complete this stack and make this project a full-stack application. 
+- We need to also implement a frontend, **React**, to complete this stack and make this project a full-stack application.
 
+4) Fix my unit test (book.test.js)
+- This is my first time writing unit test with Jest. I can't seem to figure out how to stop "asynchronous operations" in my test. Therefore, the test fails, but nonetheless, I decided to put my attempt here. 
 
 ## How to install and run project
 This guide will walk you through the steps to run an API built with Node.js, Express, and MongoDB.
@@ -96,3 +98,7 @@ Before you begin, ensure you have the following installed on your system:
 1. Install dependencies
     ```bash
     npm install --save-dev jest
+
+2. Run test in terminal
+   ```bash
+    npx jest
