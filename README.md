@@ -34,9 +34,7 @@ Before you begin, ensure you have the following installed on your system:
 - Node.js: Download and install Node.js from [nodejs.org](https://nodejs.org/).
 
 ### Installation
-
 1. Clone the repository of your Node.js API project or download into your computer and save into your Desktop
-
    ```bash
    git clone https://github.com/hanpm/Book-API.git
 
@@ -48,4 +46,53 @@ Before you begin, ensure you have the following installed on your system:
     ```bash
     npm install 
 
+### Running the API 
+1. Run the server 
+    ```bash
+    npm run dev 
+
+2. Download [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download) & start making request to the API
+- Get all books 
+    ```bash
+    localhost:3000/books
+
+- Get books with pagination 
+    ```bash
+    localhost:3000/books?page=4&limit=10
+
+- Get book by ID
+    ```bash
+    localhost:3000/books/<insert ID>
+
+- Post books 
+    ```bash
+    localhost:3000/books
+ 
+    {
+			"title": "Insert title",
+			"author": "Insert author",
+			"publicationYear": 0
+    }
+
+- Update books
+    ```bash
+    localhost:3000/books/<insert ID>
+    
+    {
+			"title": "Insert updated title",
+			"author": "Insert updated author",
+			"publicationYear": 0
+    }
+
+- Search books
+    ```bash
+    localhost:3000/books/search?q=maryshelley&page=4&limit=10
+
+- Get book stats
+    ```bash
+    localhost:3000/books/stats
+
 ## Test and how to run them
+1. Install dependencies
+    ```bash
+    npm install --save-dev jest

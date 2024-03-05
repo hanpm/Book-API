@@ -29,13 +29,13 @@ const getBook = async(req, res) => {
 const getBooks = async(req, res) => {
     try {
         // default page = 1
-        const page = parseInt(req.query.page) || 1;
+        const page = parseInt(req.query.page);
         // default limit = 5
-        const limit = parseInt(req.query.limit) || 5;
+        const limit = parseInt(req.query.limit);
 
         const books = await Book.find({});
 
-        if (page === undefined && limit === undefined) {
+        if (isNaN(page) && isNaN(limit)) {
             res.status(200).json(books);
         }
         else {
@@ -124,9 +124,9 @@ const deleteBooks = async(req, res) => {
 const searchBooks = async(req,res) => {
     try {
         // default page = 1
-        const page = parseInt(req.query.page) || 1;
+        const page = parseInt(req.query.page);
         // default limit = 5
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = parseInt(req.query.limit);
 
         const searchTerm = req.query.q;
         const books = await Book.find({});
@@ -136,7 +136,9 @@ const searchBooks = async(req,res) => {
         }
         else {
             // Find book based on title or author using filter
-            if (page === undefined && limit === undefined) {
+            console.log(page);
+            console.log(limit);
+            if (isNaN(page) && isNaN(limit)) {
                 const searchResults = books.filter(book =>
                     book.title.replace(/\s/g, "").includes(searchTerm.replace(/\s/g, "")) ||
                     book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
