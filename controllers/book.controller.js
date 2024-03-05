@@ -11,7 +11,9 @@ const Book = require("../models/book.model");
 const getBook = async(req, res) => {
     try {
         const {id} = req.params;
+        console.log(id)
         const book = await Book.findById(id);
+        // console.log(book);
         res.status(200).json(book);
     } catch (error) {
         res.status(500).json({message: `${id} does not exist in DB.`});
