@@ -22,6 +22,7 @@ app.use(cors());
 // Routes 
 app.use("/books", bookRoute);
 
+// Start the server and listen for incoming requests on the specified port
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });

@@ -1,6 +1,13 @@
 const Book = require("../models/book.model");
 
-// GET Method - getting a book according to id 
+/**
+ * Retrieve details of a book by ID.
+ * 
+ * @param {object} req - The request object containing the book ID in params.
+ * @param {object} res - The response object to send back the book details.
+ * @returns {object} JSON object containing the book details.
+ * @throws {object} JSON object containing error message if the book retrieval fails.
+ */
 const getBook = async(req, res) => {
     try {
         const {id} = req.params;
@@ -11,6 +18,14 @@ const getBook = async(req, res) => {
     }
 };
 
+/**
+ * Getting book's information.
+ * 
+ * @param {object} req - The request object asking for books from DB.
+ * @param {object} res - The response object to send back all the books or a select range of books within page or limit.
+ * @returns {object} JSON object containing all the books in range of page or limit.
+ * @throws {object} JSON object containing error message if the book(s) cannot be found.
+ */
 const getBooks = async(req, res) => {
     try {
         // default page = 1
@@ -32,6 +47,14 @@ const getBooks = async(req, res) => {
     }
 };
 
+/**
+ * Input book's information.
+ * 
+ * @param {object} req - The request object containing book details in body.
+ * @param {object} res - The response object to send back the updated book.
+ * @returns {object} JSON object containing the book information.
+ * @throws {object} JSON object containing error message if the book can't be inputted in MongoDB
+ */
 const postBooks = async(req, res) => {
     try {
         const book = await Book.create(req.body);
@@ -41,6 +64,15 @@ const postBooks = async(req, res) => {
     }
 };
 
+
+/**
+ * Update a book's information.
+ * 
+ * @param {object} req - The request object containing book ID in params and updated book details in body.
+ * @param {object} res - The response object to send back the updated book.
+ * @returns {object} JSON object containing the updated book information.
+ * @throws {object} JSON object containing error message if the update fails.
+ */
 const updateBooks = async(req, res) => {
     try {
         const {id} = req.params;
@@ -57,6 +89,14 @@ const updateBooks = async(req, res) => {
     }
 };
 
+/**
+ * Delete a book by ID.
+ * 
+ * @param {object} req - The request object containing the book ID in params.
+ * @param {object} res - The response object to send back the success message.
+ * @returns {object} JSON object containing success message upon deletion.
+ * @throws {object} JSON object containing error message if the deletion fails.
+ */
 const deleteBooks = async(req, res) => {
     try {
         const {id} = req.params;
@@ -72,6 +112,15 @@ const deleteBooks = async(req, res) => {
     }
 };
 
+
+/**
+ * Search books by title or author.
+ * 
+ * @param {object} req - The request object containing the search query and pagination parameters.
+ * @param {object} res - The response object to send back the search results.
+ * @returns {object} JSON object containing the search results.
+ * @throws {object} JSON object containing error message if the search fails.
+ */
 const searchBooks = async(req,res) => {
     try {
         // default page = 1
@@ -113,6 +162,14 @@ const searchBooks = async(req,res) => {
     }
 };
 
+/**
+ * Retrieve statistics related to the library.
+ * 
+ * @param {object} req - The request object.
+ * @param {object} res - The response object to send back the library statistics.
+ * @returns {object} JSON object containing various library statistics.
+ * @throws {object} JSON object containing error message if the statistics retrieval fails.
+ */
 const getStats = async(req, res) => {
     try {
         const titleAsc = {title: 1};
@@ -141,7 +198,13 @@ const getStats = async(req, res) => {
             booksListTimestamp.push({bookTitle, timestamp});
         };
 
-        res.status(200).json({"Total Number of Books": bookCount, "Earliest publication": sortedJsonByABC[0], "Latest Publication": sortedJsonByABC[lengthOfLibrary-1], "Sorted books by ABC order": bookListABCOrder, "Sorted books by date in asc. order": booksListDateOrder, "Timestamp for when each book entered the library": booksListTimestamp});
+        res.status(200).json({
+        "Total Number of Books": bookCount,
+        "Earliest publication": sortedJsonByABC[0],
+        "Latest Publication": sortedJsonByABC[lengthOfLibrary-1],
+        "Sorted books by ABC order": bookListABCOrder,
+        "Sorted books by date in asc. order": booksListDateOrder,
+        "Timestamp for when each book entered the library": booksListTimestamp});
         
     } catch (error) {
         console.log("Stats error");
@@ -149,7 +212,14 @@ const getStats = async(req, res) => {
     }  
 };
 
-// This is a middleware function 
+/**
+ * Paginate an array of books based on given page and limit.
+ * 
+ * @param {array} books - Array of books to paginate.
+ * @param {number} page - Current page number.
+ * @param {number} limit - Number of items per page.
+ * @returns {object} JSON object containing paginated results with next and previous page information.
+ */ 
 const paginatedJson = (books, page, limit) => {
     const startIndex = (page - 1) * limit;
     const endIndex = (page * limit);
@@ -171,8 +241,6 @@ const paginatedJson = (books, page, limit) => {
         results.results = books.slice(startIndex, endIndex);
         return results;
     };
-
-
 
 
 module.exports = {

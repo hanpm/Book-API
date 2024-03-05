@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {getBooks, getBook, postBooks, updateBooks, deleteBooks, searchBooks, getStats} = require("../controllers/book.controller");
 
-// GET method - get all books 
+// GET method 
 router.get("/", getBooks);
 
 // GET method /books/{id} 
@@ -21,7 +21,6 @@ router.delete("/:id", deleteBooks);
 router.get("/search", searchBooks);
 
 // GET /books/stats
-// Getting the total number of books, earliest/latest publication, list of books in ABC order, list of books by dates, date when the book was inputted into DB.  
 router.get("/stats", getStats);
 
 module.exports = router;
