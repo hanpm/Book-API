@@ -34,7 +34,6 @@ app.get('/books', async(req, res) => {
 app.get('/books/:id([0-9a-f]{24})', async(req, res) => {
     try {
         const {id} = req.params;
-        console.log(req.params)
         const book = await Book.findById(id);
         res.status(200).json(book);
     } catch (error) {
@@ -103,8 +102,7 @@ app.get('/books/search', async(req, res) => {
                 book.title.toLowerCase().replace(/\s/g, "").replace(/\./g, "").includes(searchTerm.toLowerCase().replace(/\s/g, "").replace(/\./g, "")) ||
                 book.author.toLowerCase().replace(/\s/g, "").includes(searchTerm.toLowerCase().replace(/\s/g, ""))
             );   
-            console.log("Search results: ", searchResults);
-
+        
             res.status(200).json(searchResults);
         }
         
